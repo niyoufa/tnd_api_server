@@ -1,0 +1,7 @@
+{% if tips %}
+{% for tip in handler.get_escaper().json_decode(tips) %}
+{% if 'text' in tip and tip['text'] %}
+<div class="alert alert-block{% if 'type' in tip %} alert-{{ tip['type'] }}{% end %}">{% raw tip['text'] %}</div>
+{% end %}
+{% end %}
+{% end %}
